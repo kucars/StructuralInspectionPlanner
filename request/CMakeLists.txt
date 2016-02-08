@@ -115,6 +115,7 @@ add_executable(bigBen src/bigBen.cpp)
 add_executable(hoaHakanaia src/hoaHakanaia.cpp)
 add_executable(plane src/plane.cpp)
 add_executable(plane_new src/plane_new.cpp)
+add_executable(etihad src/etihad.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -123,6 +124,7 @@ add_dependencies(bigBen koptplanner_generated_messages_cpp)
 add_dependencies(hoaHakanaia koptplanner_generated_messages_cpp)
 add_dependencies(plane koptplanner_generated_messages_cpp)
 add_dependencies(plane_new koptplanner_generated_messages_cpp)
+add_dependencies(etihad koptplanner_generated_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(request
@@ -138,6 +140,9 @@ target_link_libraries(plane
   ${catkin_LIBRARIES}
 )
 target_link_libraries(plane_new
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(etihad
   ${catkin_LIBRARIES}
 )
 #############
