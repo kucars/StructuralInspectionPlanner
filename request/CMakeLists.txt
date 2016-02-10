@@ -116,6 +116,8 @@ add_executable(hoaHakanaia src/hoaHakanaia.cpp)
 add_executable(plane src/plane.cpp)
 add_executable(plane_new src/plane_new.cpp)
 add_executable(etihad src/etihad.cpp)
+add_executable(etihad2 src/etihad2.cpp)
+add_executable(solarPlant src/solarPlant.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -125,6 +127,8 @@ add_dependencies(hoaHakanaia koptplanner_generated_messages_cpp)
 add_dependencies(plane koptplanner_generated_messages_cpp)
 add_dependencies(plane_new koptplanner_generated_messages_cpp)
 add_dependencies(etihad koptplanner_generated_messages_cpp)
+add_dependencies(etihad2 koptplanner_generated_messages_cpp)
+add_dependencies(solarPlant koptplanner_generated_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(request
@@ -145,6 +149,13 @@ target_link_libraries(plane_new
 target_link_libraries(etihad
   ${catkin_LIBRARIES}
 )
+target_link_libraries(etihad2
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(solarPlant
+  ${catkin_LIBRARIES}
+)
+
 #############
 ## Install ##
 #############

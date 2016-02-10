@@ -39,8 +39,8 @@ int main(int argc, char **argv)
   /* define the bounding box */
   koptplanner::inspection srv;
   srv.request.spaceSize.push_back(100);
-  srv.request.spaceSize.push_back(50);
   srv.request.spaceSize.push_back(100);
+  srv.request.spaceSize.push_back(50);
   srv.request.spaceCenter.push_back(0.0);
   srv.request.spaceCenter.push_back(0.0);
   srv.request.spaceCenter.push_back(0.0);
@@ -48,8 +48,8 @@ int main(int argc, char **argv)
 
   /* starting pose*/
   reqPose.position.x = 0.0;
-  reqPose.position.y = 0.0;
-  reqPose.position.z = 32.0;
+  reqPose.position.y = 32.0;
+  reqPose.position.z = 0.0;
   tf::Quaternion q = tf::createQuaternionFromRPY(0.0, 0.0, 0.0);
   reqPose.orientation.x = q.x();
   reqPose.orientation.y = q.y();
@@ -75,7 +75,7 @@ int main(int argc, char **argv)
   srv.request.numIterations = 10;
 
   /* read STL file and publish to rviz */
-  std::vector<nav_msgs::Path> * mesh = readSTLfile(ros::package::getPath("request")+"/meshes/etihad_nowheels_rotated_simplified.stl");
+  std::vector<nav_msgs::Path> * mesh = readSTLfile(ros::package::getPath("request")+"/meshes/etihad_nowheels_simplified.stl");
   ROS_INFO("mesh size = %i", (int)mesh->size());
   for(std::vector<nav_msgs::Path>::iterator it = mesh->begin(); it != mesh->end() && ros::ok(); it++)
   {
